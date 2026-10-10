@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Stray Kids - Miembros"),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         actions: [
           IconButton(
             icon: Icon(Icons.person),
