@@ -4,7 +4,7 @@ import '../models/member_model.dart';
 class DetailScreen extends StatelessWidget {
   final Member member;
 
-  DetailScreen({required this.member});
+  const DetailScreen({super.key, required this.member});
 
   @override
   Widget build(BuildContext context) {
