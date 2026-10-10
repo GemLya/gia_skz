@@ -7,43 +7,49 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Stray Kids Members"),
-        backgroundColor: Colors.red[900],
+        title: Text("Stray Kids - Miembros"),
+        backgroundColor: Colors.black,
         actions: [
           IconButton(
-            icon: Icon(Icons.settings),
+            icon: Icon(Icons.person),
             onPressed: () {},
-          )
+          ),
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            // Barra de búsqueda visual (Requisito)
+            // Barra de búsqueda visual
             TextField(
               decoration: InputDecoration(
                 hintText: "Buscar miembro...",
-                prefixIcon: Icon(Icons.search),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                prefixIcon: Icon(Icons.search, color: Colors.redAccent),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: BorderSide(color: Colors.redAccent),
+                ),
               ),
             ),
-            SizedBox(height: 10),
-            // Lista dinámica con GridView.builder
+            SizedBox(height: 15),
+            // Cuadrícula dinámica de miembros
             Expanded(
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, // 2 columnas
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                  childAspectRatio: 0.8,
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 12,
+                  mainAxisSpacing: 12,
+                  childAspectRatio: 0.75,
                 ),
-                itemCount: skzMembers.length,
+                itemCount: skzmembers.length,
                 itemBuilder: (context, index) {
-                  final member = skzMembers[index];
+                  final member = skzmembers[index];
                   return GestureDetector(
                     onTap: () {
-                      // Navegación a la pantalla de detalle enviando datos
+                      // Navegación hacia la pantalla de detalle pasando el objeto seleccionado
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -53,21 +59,47 @@ class HomeScreen extends StatelessWidget {
                     },
                     child: Card(
                       elevation: 4,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Expanded(
                             child: ClipRRect(
                               borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
-                              child: Image.asset(member.image, fit: BoxFit.cover),
+                              child: Hero(
+                                tag: member.nombre,
+                                child: Image.asset(
+                                  member.imagen,
+                                  fit: BoxFit.cover,
+                                  errorBuilder: (context, error, stackTrace) {
+                                    return Container(
+                                      color: Colors.grey[300],
+                                      child: Icon(Icons.person, size: 50, color: Colors.grey[600]),
+                                    );
+                                  },
+                                ),
+                              ),
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              member.name,
-                              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  member.nombre,
+                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                                ),
+                                SizedBox(height: 2),
+                                Text(
+                                  member.nombreReal,
+                                  style: TextStyle(color: Colors.grey[600], fontSize: 12),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ],
                             ),
                           ),
                         ],

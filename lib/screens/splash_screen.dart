@@ -2,17 +2,18 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
 
-
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key); // Añadimos key opcional
+
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  State<SplashScreen> createState() => _SplashScreenState(); // Cambiamos guion bajo por State público
 }
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    //3 segundos 
+    // Transición automática a la pantalla principal después de 3 segundos
     Timer(Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
@@ -24,29 +25,26 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    backgroundColor: Colors.black, // Fondo oscuro
+      backgroundColor: Colors.black,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          //Logo
           children: [
-            Image.asset(
-              Icon(Icon.album, size:100, color: Colors.redAccent)
-            ),
-            SizedBox(height: 20), // Espacio entre el logo y el texto
+            // Logo o icono alusivo
+            Icon(Icons.stars, size: 90, color: Colors.redAccent),
+            SizedBox(height: 20),
             Text(
-              'Universo Stray Kids',
+              "STRAY KIDS APP",
               style: TextStyle(
-                color: Colors.white, // Color del texto
-                fontSize: 24, // Tamaño del texto
-                fontWeight: FontWeight.bold, // Negrita
-              ),
-              SizedBox(height: 30),
-              //Animación
-              CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.redAccent),
+                color: Colors.white,
+                fontSize: 26,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 2.0,
               ),
             ),
+            SizedBox(height: 30),
+            // Animación de carga requerida
+            CircularProgressIndicator(color: Colors.redAccent),
           ],
         ),
       ),
