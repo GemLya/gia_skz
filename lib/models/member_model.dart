@@ -63,7 +63,7 @@ Es conocido por su talento en el canto, el baile y la composición de canciones.
   ),
   Member(
     nombre: "Felix",
-    nombreReal: "Felix Lee",
+    nombreReal: "Lee Yong Bok",
     rol: "Vocalista, Bailarín, Rapero",
     imagen: "assets/images/felix.jpg",
     biografia: """Felix es uno de los miembros principales del grupo Stray Kids.
@@ -83,9 +83,9 @@ Es conocido por su talento en el canto, el baile y la composición de canciones.
     nombre: "I.N",
     nombreReal: "Yang Jeong-in",
     rol: "Vocalista, Bailarín, Rapero",
-    imagen: "assets/images/in.jpg",
+    imagen: "assets/images/in.jpg", 
     biografia: """I.N es uno de los miembros principales del grupo Stray Kids.
-Nació el 8 de febrero de 2001 en Busan, Corea del Sur.
-Es conocido por su talento en el canto, el baile y la composición de canciones.""",
+  Nació el 8 de febrero de 2001 en Busan, Corea del Sur.
+  Es conocido por su talento en el canto, el baile y la composición de canciones.""",
   ),
 ];

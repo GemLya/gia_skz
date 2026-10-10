@@ -11,7 +11,7 @@ class DetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(member.nombre),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -51,7 +51,7 @@ class DetailScreen extends StatelessWidget {
                   SizedBox(height: 12),
                   Row(
                     children: [
-                      Icon(Icons.star, color: Colors.redAccent, size: 20),
+                      Icon(Icons.hotel_class_sharp, color: Colors.redAccent, size: 20),
                       SizedBox(width: 6),
                       Expanded(
                         child: Text(

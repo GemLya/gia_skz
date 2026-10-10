@@ -34,9 +34,9 @@ class _SplashScreenState extends State<SplashScreen> {
             Icon(Icons.stars, size: 90, color: Colors.redAccent),
             SizedBox(height: 20),
             Text(
-              "STRAY KIDS APP",
+              "Conociendo Stray Kids",
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: 26,
                 fontWeight: FontWeight.bold,
                 letterSpacing: 2.0,

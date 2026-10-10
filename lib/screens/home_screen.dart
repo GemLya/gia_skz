@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+
 import '../models/member_model.dart';
 import 'detail_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,7 +14,10 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         actions: [
           IconButton(
-            icon: Icon(Icons.person),
+            icon: CircleAvatar(
+              radius: 18,
+              backgroundImage: AssetImage('assets/images/logo.jpg'),
+            ),
             onPressed: () {},
           ),
         ],
@@ -68,7 +73,9 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Expanded(
                             child: ClipRRect(
-                              borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
+                              borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(15),
+                              ),
                               child: Hero(
                                 tag: member.nombre,
                                 child: Image.asset(
@@ -77,7 +84,11 @@ class HomeScreen extends StatelessWidget {
                                   errorBuilder: (context, error, stackTrace) {
                                     return Container(
                                       color: Colors.grey[300],
-                                      child: Icon(Icons.person, size: 50, color: Colors.grey[600]),
+                                      child: Icon(
+                                        Icons.person,
+                                        size: 50,
+                                        color: Colors.grey[600],
+                                      ),
                                     );
                                   },
                                 ),
@@ -91,12 +102,18 @@ class HomeScreen extends StatelessWidget {
                               children: [
                                 Text(
                                   member.nombre,
-                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                  ),
                                 ),
                                 SizedBox(height: 2),
                                 Text(
                                   member.nombreReal,
-                                  style: TextStyle(color: Colors.grey[600], fontSize: 12),
+                                  style: TextStyle(
+                                    color: Colors.grey[600],
+                                    fontSize: 12,
+                                  ),
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                 ),
