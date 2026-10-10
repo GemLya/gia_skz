@@ -1,6 +1,6 @@
 # gia_skz
 
-A new Flutter project.
+Esta es una aplicación para conocer al grupo de K-Pop Stray Kids, se conocera su discografia y sus miembros.
 
 ## Getting Started
 
