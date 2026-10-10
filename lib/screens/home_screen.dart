@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import '../models/member_model.dart';
 import 'detail_screen.dart';
+import 'albums_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -31,8 +33,9 @@ class _HomeScreenState extends State<HomeScreen> {
           final nameLower = member.nombre.toLowerCase();
           final realNameLower = member.nombreReal.toLowerCase();
           final searchLower = query.toLowerCase();
-          
-          return nameLower.contains(searchLower) || realNameLower.contains(searchLower);
+
+          return nameLower.contains(searchLower) ||
+              realNameLower.contains(searchLower);
         }).toList();
       }
     });
@@ -45,6 +48,16 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text("Stray Kids - Miembros"),
         backgroundColor: Colors.white,
         actions: [
+          IconButton(
+            icon: Icon(Icons.album, color: Colors.redAccent),
+            tooltip: "Ver Discografía",
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AlbumsScreen()),
+              );
+            },
+          ),
           IconButton(
             icon: CircleAvatar(
               radius: 18,
@@ -108,7 +121,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => DetailScreen(member: member),
+                                builder: (context) =>
+                                    DetailScreen(member: member),
                               ),
                             );
                           },
@@ -130,16 +144,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                       child: Image.asset(
                                         member.imagen,
                                         fit: BoxFit.cover,
-                                        errorBuilder: (context, error, stackTrace) {
-                                          return Container(
-                                            color: Colors.grey[300],
-                                            child: Icon(
-                                              Icons.person,
-                                              size: 50,
-                                              color: Colors.grey[600],
-                                            ),
-                                          );
-                                        },
+                                        errorBuilder:
+                                            (context, error, stackTrace) {
+                                              return Container(
+                                                color: Colors.grey[300],
+                                                child: Icon(
+                                                  Icons.person,
+                                                  size: 50,
+                                                  color: Colors.grey[600],
+                                                ),
+                                              );
+                                            },
                                       ),
                                     ),
                                   ),
@@ -147,7 +162,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         member.nombre,

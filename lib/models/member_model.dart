@@ -18,7 +18,7 @@ class Member {
 List<Member> skzmembers = [
   Member(
     nombre: "Bang Chan",
-    nombreReal: "Christopher Bang",
+    nombreReal: "Christopher Chahn Bahng",
     rol: "Líder, Vocalista, Bailarín, Rapero",
     imagen: "assets/images/bangchan.jpg",
     biografia: """Bang Chan es el líder del grupo Stray Kids.
