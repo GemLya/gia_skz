@@ -8,7 +8,7 @@ class AlbumsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Discografía - Stray Kids"),
+        title: Text("Discografía desde su Pre-Debut hasta la actualidad"),
         backgroundColor: Colors.white,
       ),
       body: ListView.builder(
@@ -43,7 +43,7 @@ class AlbumsScreen extends StatelessWidget {
               subtitle: Text("Año: ${album.anio}"),
               trailing: Icon(Icons.arrow_forward_ios, size: 16),
               onTap: () {
-                // Aquí puedes agregar la navegación al detalle del álbum si lo deseas
+                
               },
             ),
           );
