@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     // Inicializamos con todos los miembros
-    _filteredMembers = skzmembers;
+    _filteredMembers = skzmembers; //Modificar a dos patallas
   }
 
   // Método para filtrar la lista según lo que escriba el usuario

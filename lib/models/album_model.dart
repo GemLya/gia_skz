@@ -224,4 +224,11 @@ List<Album> skzAlbums = [
         "DO IT es un lanzamiento especial, "
         "lanzado el 21 de noviembre de 2025. Cuenta con temas principales como 'Do It' y 'DIVINE'.",
   ),
+
+  Album(
+    titulo: "THIS & THAT", 
+    anio: "2026", 
+    imagen: "assets/albums/thi_and_that.jpg", 
+    descripcion: "descripcion"),
+
 ];
